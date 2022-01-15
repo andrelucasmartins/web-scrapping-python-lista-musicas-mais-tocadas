@@ -11,7 +11,6 @@ site = requests.get(url, headers=headers)
 
 soup = BeautifulSoup(site.content, 'html5lib')
 
-videos =  soup.find('div', attrs = {'class': 'lista'})
+videos =  soup.find('div', attrs = {'class': 'lista'}).find('ol')
 
-# name = videos.find('ol')
-print(videos.prettify())
+print(videos.text)
